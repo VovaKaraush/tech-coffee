@@ -126,12 +126,15 @@ public class Machine {
     public void maintenanceMenu(){
         while (true) {
             System.out.println();
+            statusMachine();
+            System.out.println();
             System.out.println("Technician's MENU:");
             System.out.println("1. Decalcify Machine");
             System.out.println("2. Fill Up Machine");
             System.out.println("3. Get Money from Machine");
             System.out.println("4. Status of the Machine");
             System.out.println("5. Exit Maintenance Menu");
+            System.out.println();
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
@@ -145,6 +148,7 @@ public class Machine {
                     break;
                 case "4":
                     statusMachine();
+                    break;
                 case "5":
                     System.out.println("Exiting Maintenance Menu...");
                     return;
@@ -156,11 +160,8 @@ public class Machine {
     }
 
     public void MenuPrincipal() {
-        System.out.println("--------------------------------");
-        System.out.println("Machine Status: Water: " + this.water + " cl");
-        System.out.println("Coffee: " + this.coffee + " g");
-        System.out.println("Cups: " + this.cups);
-        System.out.println("--------------------------------");
+        System.out.println();
+        statusMachine();
         while (true) {
             System.out.println();
             System.out.println("1. Add Credit (0.50$)");
